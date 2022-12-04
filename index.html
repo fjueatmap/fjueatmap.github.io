@@ -70,6 +70,7 @@
                 $(".main:eq("+i+")").click({id:i},function(e){
                     n=e.data.id
                     $(".sub:eq("+n+")").slideToggle();
+                    $(".sub:not(:eq(" + n + "))").slideUp();
                 })
             }
             $("#menu").css("width",$(".main").length*100)
