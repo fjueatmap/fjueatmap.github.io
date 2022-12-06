@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        background-color: rgb(240, 186, 105);
+    }
+    
+    @import url('http://nonty.net/font/setofont/​');
+    #word{
+        margin: 1%;
+        font-size: 40px;
+        color: gray;
+        display: flex;
+        font-family: setofont;
+        justify-content: center;
+    }
+    #menu{
+        margin: auto;
+    }
+    img{
+        height: auto;
+        max-width: 100%;
+    }
+    .main{
+        background-color: rgb(240, 186, 105);
+        color: white;
+        font-family: setofont;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        height: 35px;
+        width: 100px;
+        }
+    .sub{
+		position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(240, 186, 105);
+        color: white;
+        font-family: setofont;
+        text-align: center;
+        font-weight: bold;
+        width: 100px;
+    }
+    .sub li{
+		border-color: gray;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 3%;
+        list-style-type: none;
+        line-height: 25px;
+    }
+    .item{
+        float: left;
+    }
+    .text{
+        border-color: gray;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 3%;
+        border-top: 0;
+        border-left: 0;
+        border-bottom: 0;
+        margin: 1%;
+        font-size: 25px;
+    }
+    .border{
+        border-color: gray;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 1%;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+    .set{
+        margin: 1%;
+        display: flex;
+        justify-content: center;
+    }
+    .mo{
+        background-color: rgb(240, 186, 105);
+        color: white;
+        font-family: setofont;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        height: 35px;
+        margin-top: 40px;
+        margin-right:3px;
+    }
+    .m1{
+        border-color: gray;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 1%;
+        width: 40%;
+        position: absolute;
+        text-align: center;
+        color: white;
+        font-family: setofont;
+    }
+    .m1 li{
+        float: left;
+        margin-right:25px;
+        list-style-type: none;
+        font-size: 25px;
+    }
+</style>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FJU EAT MAP</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="jquery.rwdImageMaps.js"></script>
+    <script>
+       $(document).ready(function(){
+            $(".sub").slideUp(0)
+            for(i = 0;i<$(".main").length;++i){
+                $(".main:eq("+i+")").click({id:i},function(e){
+                    n=e.data.id
+                    $(".sub:eq("+n+")").slideToggle();
+                    $(".sub:not(:eq(" + n + "))").slideUp();
+                })
+            }
+            $(".sub2").slideUp(0)
+            $(".sub").slideUp(0)
+            for(i = 0;i<$(".mo").length;++i){
+                $(".mo:eq("+i+")").click({id:i},function(e){
+                    n=e.data.id
+                    $(".sub2:eq("+n+")").slideToggle();
+                    $(".sub2:not(:eq(" + n + "))").slideUp();
+                })
+            }
+            $("#menu").css("width",$(".main").length*100)
+            $('img[usemap]').rwdImageMaps();
+       })
+    </script>
+</head>
+
+<body> 
+    <div id="word">
+        <a href="https://fjueatmap.github.io/" style="color:gray;">輔仁學餐</a>
+    </div>
+    <div id="menu" style="width: 600px;height: 35px;">
+        <div class="item">
+            <div class="main">
+                <a style="color:white;">輔園</a>
+            </div>
+            <div class="sub">
+                <ul>
+                    <li>八方雲集</li>
+                    <li>新纖戀果</li>
+                    <li>食福簡餐</li>
+                    <li>雲瀚哨子麵</li>
+                    <li>新東家滷味</li>
+                    <li>新羅韓式料理</li>
+                    <li>廚師豬排</li>
+                    <li>茶壜</li>
+                    <li>社企</li>
+                    <li>麵包店</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">
+                <a style="color:white;">理園</a>
+            </div>
+            <div class="sub">
+                <ul>
+                    <li>辛蔬</li>
+                    <li>饗敘</li>
+                    <li>阿珠媽</li>
+                    <li>楓炊炒丼</li>
+                    <li>三顧茅廬</li>
+                    <li>熊賀炒飯</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">
+                <a style="color:white;">仁園</a>
+            </div>
+            <div class="sub">
+                <UL>
+                    <li>自助餐</li>
+                    <li>麵食部</li>
+                </UL>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">
+                <a style="color:white;">心園</a>    
+            </div>
+            <div class="sub">
+                <ul>
+                    <li>自助餐</li>
+                    <li>麵食部</l>
+                    <li>水果果汁</li>
+                    <li>巧瑋鬆餅屋</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">
+                <a style="color:white;">文園</a>
+            </div>
+            <div class="sub">
+                <ul>
+                    <li>阿關小吃店</li>
+                    <li>娃子複合式餐飲</li>
+                    <li>趙班長海苔飯捲</li>
+                    <li>COMEBUY</li>
+                    <li>吉立自助餐</li>
+                    <li>阿諾手感烘培</li>
+                    <li>MO&MO滷味</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">
+                <a style="color:white;">聖園</a>
+            </div>
+            <div class="sub">
+                <ul>
+                    <li>想點</li>
+                    <li>自由雞飯</li>
+                    <li>赤井咖哩會社</li>
+                    <li>7-11販賣機</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="set " style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">八方雲集</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>招牌水餃/鍋貼  6元</li>
+                    <li>韭菜水餃/鍋貼  6元</li>
+                    <li>韓式水餃/鍋貼  6元</li>
+                    <li>玉米水餃/鍋貼  6元</li>
+                    <li>咖哩雞肉水餃/鍋貼  6元</li>
+                    <li>素食水餃/鍋貼  6.5元</li>
+                    <li>酸辣湯餃  70元</li>
+                    <li>玉米湯餃  70元</li>
+                    <li>旗魚花枝丸湯餃  70元</li>
+                    <li>蛋花湯餃  70元</li>
+                    <li>酸辣湯  30元</li>
+                    <li>玉米濃湯  30元</li>
+                    <li>旗魚花枝丸湯  30元</li>
+                    <li>蛋花湯  30元</a>
+                    <li>白豆漿  15元</li>
+                </ul>  
+            </div>
+
+        </div>
+    </div>
+    <div class="set" style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">夯鮮子鮮果鋪</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>夢幻鮮果汁系列  65元</li>
+                    <li>現切水果  55元</li>
+                    <li>夯先子牛奶系列  60元</li>
+                    <li>新鮮果汁系列  55元</li>
+                </ul>  
+            </div>
+        </div>
+    </div>
+    <div class="set" style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">食福簡餐</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>火腿蛋炒飯  75元</li>
+                    <li>培根蛋炒飯  75元</li>
+                    <li>肉絲蛋炒飯  75元</li>
+                    <li>泡菜肉絲蛋炒飯  75元</li>
+                    <li>雞肉絲蛋炒飯  75元</li>
+                    <li>養生素蛋炒飯  75元</li>
+                    <li>蝦仁蛋炒飯  80元</li>
+                    <li>香腸蛋炒飯  80元</li>
+                    <li>豆腐味噌湯  20元</li>
+                </ul>  
+            </div>
+        </div>
+    </div>
+    <div class="set" style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">雲瀚哨子麵</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>哨子乾麵/粄條  小65元/大75元</li>
+                    <li>哨子飯  65元</li>
+                    <li>咖哩飯  80元</li>
+                    <li>咖哩乾拌麵  80元</li>
+                    <li>哨子/咖哩烏龍麵  85元</li>
+                    <li>養生素蛋炒飯  75元</li>
+                    <li>咖哩粄條  80元</li>
+                    <li>咖哩湯麵  80元</li>
+                    <li>餛飩麵  60元</li>
+                    <li>榨菜肉絲麵  60元</li>
+                    <li>綜合丸麵  60元</li>
+                    <li>貢丸麵  60元</li>
+                    <li>餛飩麵  60元</li>
+                    <li>雪蝦丸麵  60元</li>
+                    <li>綜合丸湯  30元</li>
+                    <li>貢丸湯  30元</li>
+                    <li>餛飩湯  35元</li>
+                    <li>雪蝦丸湯  30元</li>
+                    
+                </ul>  
+            </div>
+        </div>
+    </div>
+    <div class="set" style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">新東家滷味</div>
+        </div>
+    </div>
+    <div class="set" style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">新羅韓式料理</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>烤肉飯  110元</li>
+                    <li>烤肉湯麵  110元</li>
+                    <li>烤肉拌飯  110元</li>
+                    <li>海鮮豆腐辣湯  100元</li>
+                    <li>泡菜豆腐辣湯  100元</li>
+                    <li>海鮮鍋燒  100元</li>
+                    <li>年糕湯 90元</li>
+                    <li>泡菜豬肉鍋  120元</li>
+                    <li>每日特餐  90元</li>
+                    <li>辣炒年糕  60元 加麵  75元</li> 
+                </ul>  
+            </div>
+        </div>
+    </div>
+    <div class="set" style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">廚師豬排</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>風味豬排  80元</li>
+                    <li>香酥雞排餐  80元</li>
+                    <li>蜜汁滷豬排餐  80元</li>
+                    <li>綜合豬排餐  80元</li>
+                    <li>招牌燒肉飯  75元</li>
+                    <li>滷雞腿餐  75元</li>
+                    <li>黑胡椒雞丁餐 70元</li>
+                    <li>上海菜飯  60元</li>
+                    <li>什錦燴飯  80元</li> 
+                </ul>  
+            </div>
+        </div>
+    </div>
+    <div class="set" style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">茶壜</div>
+        </div>
+    </div>
+    <div class="set" style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">社企</div>
+        </div>
+    </div>
+    <div class="set 麵包店" style="width:100%;">
+        <div class="border" style="width: 50%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 90px;">麵包店</div>
+            <div class="mo" >
+                <a style="color:white;">店家推薦</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>香酥菠蘿麵包  35元</li>
+                    <li>六葉大蒜乳酪包  50元</li>
+                    <li>冰火菠蘿  45元</li>
+                    <li>熔岩起司菠蘿  50元</li>
+                    <li>嫩煎牛肉堡  60元</li>
+                    <li>法式豬排堡  65元</li>
+                    <li>巧克力/起司QQ球  25元</li>
+                    <li>冰心脆皮蛋塔  100元</li>
+                    <li>焦糖烤布丁(四入)  120元</li> 
+                    <li>巧克力四葉鮮菓子  25元</li>
+                    <li>藍莓重乳酪  70元</li>
+                    <li>玫瑰蘋果重乳駱  70元</li> 
+                </ul>  
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
